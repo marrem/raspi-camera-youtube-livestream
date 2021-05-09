@@ -1,0 +1,14 @@
+[Unit]
+Description=Camera YouTube streamer
+After=network.target
+
+[Service]
+Type=simple
+User=webcam
+ExecStart=/usr/local/sbin/youtube_live_stream.sh ${STREAM_KEY}
+KillMode=control-group
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+

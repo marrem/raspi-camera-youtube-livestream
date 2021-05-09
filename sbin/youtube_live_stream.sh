@@ -33,6 +33,8 @@ raspivid -o - -t 0 \
   -fps $INPUT_VIDEO_FRAMERATE \
   -g $INPUT_VIDEO_KEYFRAME_INTERVAL | \
 ffmpeg \
+  -hide_banner \
+  -loglevel error \
   -re \
   -ar $INPUT_AUDIO_BITRATE \
   -ac $INPUT_AUDIO_NROFCHANNELS \
