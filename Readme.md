@@ -12,3 +12,4 @@ multiplex (zero audio and video) into flv stream
 FullHD is possible. At least when the RaspberryPi is connected by ethernet cable.
 
 
+![YouTube Studio showing the stream from the RaspberryPi](youtube-studio.png)
