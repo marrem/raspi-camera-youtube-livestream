@@ -27,6 +27,7 @@ OUTPUT_FORMAT=flv
 OUTPUT_URL="rtmp://a.rtmp.youtube.com/live2/$STREAM_KEY"
 
 raspivid -o - -t 0 \
+  --annotate 12 \
   -b $INPUT_VIDEO_BITRATE \
   -w $INPUT_VIDEO_WIDTH \
   -h $INPUT_VIDEO_HEIGHT \
