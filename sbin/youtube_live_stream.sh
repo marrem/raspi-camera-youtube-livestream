@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Date/time in strftime
+ANNOTATE_TEMPLATE='Oak tree cam. Netherlands, The Hague, %Y-%m-%d %H:%M:%S %z'
 STREAM_KEY="$1"
 
 if [ -z "$STREAM_KEY" ];then
@@ -26,8 +28,11 @@ OUTPUT_VIDEO_FRAMERATE=30
 OUTPUT_FORMAT=flv
 OUTPUT_URL="rtmp://a.rtmp.youtube.com/live2/$STREAM_KEY"
 
+set -o pipefail
+
 raspivid -o - -t 0 \
   --annotate 12 \
+  --annotate "$ANNOTATE_TEMPLATE" \
   -b $INPUT_VIDEO_BITRATE \
   -w $INPUT_VIDEO_WIDTH \
   -h $INPUT_VIDEO_HEIGHT \
